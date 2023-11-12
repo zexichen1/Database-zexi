@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Trip Edit</title>
+    <%- include('./partials/css.ejs') %>
+  </head>
+  <body>
+    <div class="container">
+      <%- include("./partials/navBar.ejs") %>
+      <h1>Create Appointment</h1>
+
+      <%- include("./partials/errMsg.ejs") %>
+
+
+
+      <form action="/appointments/create" method="POST">
+        <div class="mb-3">
+          <label class="form-label">
+            CarID
+            <input
+              type="text"
+              name="CarID"
+              class="form-control"
+            />
+          </label>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">
+            ShopID
+            <input
+              type="text"
+              name="ShopID"
+              class="form-control"
+            />
+          </label>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">
+            AppointmentDate
+            <input
+              type="text"
+              name="AppointmentDate"
+              class="form-control"
+            />
+          </label>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">
+            ServiceRequired
+            <input
+              type="text"
+              name="ServiceRequired"
+              class="form-control"
+            />
+          </label>
+        </div>
+        <div>
+          <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+      </form>
+
+      <%- include("./partials/footer.ejs") %>
+    </div>
+    <!-- /.container -->
+  </body>
+</html>

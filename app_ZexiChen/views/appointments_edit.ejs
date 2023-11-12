@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+  <title>Edit Appointment</title>
+  <%- include('./partials/css.ejs') %>
+</head>
+<body>
+  <div class="container">
+    <%- include("./partials/navBar.ejs") %>
+
+    <h1>Edit Appointment <%= appointment.AppointmentID %></h1>
+    <%- include("./partials/errMsg.ejs") %>
+
+    <form action="/appointments/<%= appointment.AppointmentID %>/edit" method="POST">
+      <!-- Start creating form fields matching the database columns for Appointments table -->
+      <div class="mb-3">
+        <label class="form-label">Car ID</label>
+        <input
+          type="number"
+          value="<%= appointment.CarID %>"
+          name="CarID"
+          class="form-control"
+        />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Shop ID</label>
+        <input
+          type="number"
+          value="<%= appointment.ShopID %>"
+          name="ShopID"
+          class="form-control"
+        />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Appointment Date</label>
+        <input
+          type="date"
+          value="<%= appointment.AppointmentDate %>"
+          name="AppointmentDate"
+          class="form-control"
+        />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Service Required</label>
+        <textarea
+          name="ServiceRequired"
+          class="form-control"
+        ><%= appointment.ServiceRequired %></textarea>
+      </div>
+      <!-- End creating form fields matching the database columns for Appointments table -->
+
+      <div>
+        <button type="submit" class="btn btn-primary">Update Appointment</button>
+      </div>
+    </form>
+
+    <!-- Your footer here -->
+  </div>
+</body>
+</html>
